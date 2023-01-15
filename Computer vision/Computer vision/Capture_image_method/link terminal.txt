@@ -1,0 +1,4 @@
+cd C:\Users\Admin\Documents\PBL4\ESP32 camera\computer vision\Code\Analog_Speed_Gauge_Images_Reader-main
+python analog_gauge_reader.py
+images
+6
