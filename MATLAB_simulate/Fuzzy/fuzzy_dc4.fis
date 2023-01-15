@@ -1,0 +1,79 @@
+[System]
+Name='fuzzy_dc4'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='goc_lech'
+Range=[-25 25]
+NumMFs=5
+MF1='Rat_am':'trapmf',[-90 -90 -25 -12.5]
+MF2='Am':'trimf',[-25 -12.5 0]
+MF3='Bang_khong':'trimf',[-12.5 0 12.5]
+MF4='Duong':'trimf',[0 12.5 25]
+MF5='Rat_duong':'trapmf',[12.5 25 90 90]
+
+[Input2]
+Name='dao_ham_goc_lech'
+Range=[-5 5]
+NumMFs=5
+MF1='Rat_am':'trapmf',[-1000 -1000 -5 -2.5]
+MF2='Am':'trimf',[-5 -2.5 0]
+MF3='Bang_khong':'trimf',[-2.5 0 2.5]
+MF4='Duong':'trimf',[0 2.5 5]
+MF5='Rat_duong':'trapmf',[2.5 5 1000 1000]
+
+[Output1]
+Name='Dong_co_phai'
+Range=[30 255]
+NumMFs=5
+MF1='Rat_cham':'trimf',[30 70 110]
+MF2='Cham':'trimf',[70 110 150]
+MF3='Vua':'trimf',[110 150 190]
+MF4='Nhanh':'trimf',[150 190 230]
+MF5='Rat_nhanh':'trimf',[175 215 255]
+
+[Output2]
+Name='Dong_co_trai'
+Range=[30 255]
+NumMFs=5
+MF1='Cham':'trimf',[70 110 150]
+MF2='Rat_cham':'trimf',[30 70 110]
+MF3='Vua':'trimf',[110 150 190]
+MF4='Nhanh':'trimf',[150 190 230]
+MF5='Rat_nhanh':'trimf',[175 215 255]
+
+[Rules]
+1 5, 4 1 (1) : 1
+1 4, 4 1 (1) : 1
+1 3, 3 3 (1) : 1
+1 2, 1 5 (1) : 1
+1 1, 1 5 (1) : 1
+2 5, 4 1 (1) : 1
+2 4, 2 4 (1) : 1
+2 3, 2 4 (1) : 1
+2 2, 1 5 (1) : 1
+2 1, 1 5 (1) : 1
+3 5, 4 1 (1) : 1
+3 4, 3 1 (1) : 1
+3 3, 3 3 (1) : 1
+3 2, 3 3 (1) : 1
+3 1, 2 4 (1) : 1
+4 5, 5 2 (1) : 1
+4 4, 5 2 (1) : 1
+4 3, 4 1 (1) : 1
+4 2, 4 1 (1) : 1
+4 1, 3 3 (1) : 1
+5 5, 5 2 (1) : 1
+5 4, 5 2 (1) : 1
+5 3, 5 2 (1) : 1
+5 2, 4 1 (1) : 1
+5 1, 4 1 (1) : 1
